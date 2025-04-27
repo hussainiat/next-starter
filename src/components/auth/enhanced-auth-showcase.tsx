@@ -5,7 +5,8 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Loader2, Lock, Mail, User, Github, Twitter, Youtube, KeyRound, ShieldCheck } from "lucide-react"
+import { Loader2, Lock, Mail, User, KeyRound, ShieldCheck } from "lucide-react"
+import { FaGoogle, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -393,7 +394,7 @@ export function EnhancedAuthShowcase() {
                       onClick={() => handleSocialLogin("Google")}
                       disabled={isLoading}
                     >
-                      <Youtube className="h-4 w-4" />
+                      <FaGoogle className="h-4 w-4" />
                     </Button>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-auto">
@@ -409,7 +410,7 @@ export function EnhancedAuthShowcase() {
                       onClick={() => handleSocialLogin("GitHub")}
                       disabled={isLoading}
                     >
-                      <Github className="h-4 w-4" />
+                      <FaGithub className="h-4 w-4" />
                     </Button>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-auto">
@@ -425,7 +426,7 @@ export function EnhancedAuthShowcase() {
                       onClick={() => handleSocialLogin("Twitter")}
                       disabled={isLoading}
                     >
-                      <Twitter className="h-4 w-4" />
+                      <FaXTwitter className="h-4 w-4" />
                     </Button>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-auto">

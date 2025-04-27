@@ -27,7 +27,7 @@ export default function Home() {
                     <a href="/examples">View Examples</a>
                   </Button>
                   <Button size="lg" variant="outline">
-                    View on GitHub
+                  <a href="https://github.com/hussainiat/next-starter.git">View on GitHub</a>
                   </Button>
                 </div>
               </div>

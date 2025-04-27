@@ -10,7 +10,7 @@ export const Footer = () => {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com"
+            href="https://github.com/hussainiat/next-starter"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium underline underline-offset-4"
