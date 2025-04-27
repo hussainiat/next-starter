@@ -1,103 +1,191 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ExampleForm } from "@/components/example-form";
+import { AdvancedChart } from "@/components/data-visualization/advanced-chart";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen flex-col">
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    Next.js Enterprise Starter Kit
+                  </h1>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    A production-ready, feature-rich starter kit for building modern web applications with Next.js, React, TypeScript, and Tailwind CSS.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button size="lg" asChild>
+                    <a href="/examples">View Examples</a>
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    View on GitHub
+                  </Button>
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[450px] lg:w-[450px]">
+                  <Image
+                    src="/next.svg"
+                    alt="Next.js Logo"
+                    fill
+                    className="object-contain dark:invert"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Features Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Features</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Everything you need to build modern web applications
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Next.js 15+</CardTitle>
+                  <CardDescription>The React framework for production</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Built on the latest version of Next.js with App Router and React Server Components.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>TypeScript</CardTitle>
+                  <CardDescription>Type safety and improved developer experience</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Fully typed codebase with TypeScript for better code quality and developer productivity.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Tailwind CSS</CardTitle>
+                  <CardDescription>Utility-first CSS framework</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Modern styling with Tailwind CSS for rapid UI development and consistent design.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Shadcn UI</CardTitle>
+                  <CardDescription>High-quality, accessible UI components</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Beautiful, accessible components built with Radix UI and styled with Tailwind CSS.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Dark Mode</CardTitle>
+                  <CardDescription>Built-in dark mode support</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Seamless dark mode integration with next-themes for a better user experience.</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Form Handling</CardTitle>
+                  <CardDescription>Integrated with react-hook-form and zod</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Powerful form handling with validation using react-hook-form and zod.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Example Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Examples</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Check out some examples of what you can build with this starter kit
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto max-w-3xl py-12">
+              <Tabs defaultValue="components" className="w-full">
+                <TabsList className="grid w-full grid-cols-4">
+                  <TabsTrigger value="components">UI Components</TabsTrigger>
+                  <TabsTrigger value="forms">Form Handling</TabsTrigger>
+                  <TabsTrigger value="data">Data Visualization</TabsTrigger>
+                  <TabsTrigger value="api">API Integration</TabsTrigger>
+                </TabsList>
+                <TabsContent value="components" className="p-4 border rounded-md mt-4">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">Beautiful UI Components</h3>
+                    <p>This starter kit includes a comprehensive set of UI components from Shadcn UI, built with Radix UI and styled with Tailwind CSS.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Button>Button</Button>
+                      <Button variant="secondary">Secondary</Button>
+                      <Button variant="outline">Outline</Button>
+                      <Button variant="ghost">Ghost</Button>
+                    </div>
+                  </div>
+                </TabsContent>
+                <TabsContent value="forms" className="p-4 border rounded-md mt-4">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">Form Handling</h3>
+                    <p>Integrated with react-hook-form and zod validation for powerful form handling capabilities.</p>
+                    <div className="mt-6">
+                      <ExampleForm />
+                    </div>
+                  </div>
+                </TabsContent>
+                <TabsContent value="data" className="p-4 border rounded-md mt-4">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">Advanced Data Visualization</h3>
+                    <p>Built-in support for interactive data visualization with customizable charts, filters, and animations.</p>
+                    <div className="mt-6">
+                      <AdvancedChart />
+                    </div>
+                    <div className="mt-4">
+                      <Button asChild size="sm">
+                        <a href="/examples">View More Charts</a>
+                      </Button>
+                    </div>
+                  </div>
+                </TabsContent>
+                <TabsContent value="api" className="p-4 border rounded-md mt-4">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">Comprehensive API Integration</h3>
+                    <p>Support for multiple API patterns including REST, GraphQL, and real-time data with WebSockets.</p>
+                    <div className="mt-4">
+                      <Button asChild size="sm">
+                        <a href="/examples">View API Examples</a>
+                      </Button>
+                    </div>
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
