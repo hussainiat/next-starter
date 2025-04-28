@@ -23,9 +23,9 @@ A production-ready, feature-rich starter kit for building modern web application
 First, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/yourusername/next-enterprise-starter.git
-cd next-enterprise-starter
-npm install
+git clone https://github.com/hussainiat/next-starter.git
+cd next-starter
+npm install (or npm i --legacy-peer-deps)
 ```
 
 Then, run the development server:

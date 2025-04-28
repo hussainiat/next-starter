@@ -85,7 +85,7 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/" passHref>
+                <Link href="/documentation" passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Documentation
                   </NavigationMenuLink>
@@ -103,7 +103,7 @@ export function Header() {
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button size="sm">Get Started</Button>
+          <Button size="sm"><a href="https://github.com/hussainiat/next-starter.git">Get Started</a></Button>
         </div>
       </div>
     </header>
