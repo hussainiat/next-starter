@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    // Disable ESLint during production builds
-    ignoreDuringBuilds: true,
-  },
+  // ESLint configuration is now handled in eslint.config.mjs
   typescript: {
     // Disable TypeScript type checking during builds
     ignoreBuildErrors: true,
+  },
+  // Configure Turbopack root directory
+  turbopack: {
+    root: '/Users/anwarhussain/src/MY-NEXT',
   },
 };
 
